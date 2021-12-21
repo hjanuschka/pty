@@ -31,7 +31,7 @@ func open() (pty, tty *os.File, err error) {
 		return nil, nil, err
 	}
 
-	t, err := os.OpenFile(sname, os.O_RDWR|syscall.O_NOCTTY, 0) //nolint:gosec // Expected Open from a variable.
+	t, err := os.OpenFile(sname, os.O_RDWR, 0) //nolint:gosec // Expected Open from a variable.
 	if err != nil {
 		return nil, nil, err
 	}
