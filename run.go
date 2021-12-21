@@ -29,7 +29,7 @@ func StartWithSize(cmd *exec.Cmd, ws *Winsize) (*os.File, error) {
 		cmd.SysProcAttr = &syscall.SysProcAttr{}
 	}
 	cmd.SysProcAttr.Setsid = true
-	cmd.SysProcAttr.Setctty = true
+	cmd.SysProcAttr.Setctty = false
 	return StartWithAttrs(cmd, ws, cmd.SysProcAttr)
 }
 
